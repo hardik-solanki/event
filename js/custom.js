@@ -55,10 +55,10 @@
 
 	
 	$('.testimonialslide').flexslider({
-	animation: "slide",
-	slideshow: false,
-	directionNav:false,
-	controlNav: true
+		animation: "slide",
+		slideshow: false,
+		directionNav:false,
+		controlNav: true
 	});
 	
 	//owl carousel
@@ -95,4 +95,16 @@
 			jQuery(".nav a[href='#" + id + "']").parent().addClass("active");					
 		});
 	
+	$('.eveniProfImg').each(function(){
+		var self = this;
+		console.log(this);
+		var _img = new Image();
+		_img.src = $(self).attr("src");
+			_img.onload = function(){
+				$(self).siblings().css( "display", "none" );
+				$(self).css("display", "block");
+			};
+		
+		
+	});
 })(jQuery);

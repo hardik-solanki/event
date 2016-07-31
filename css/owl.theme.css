@@ -74,3 +74,9 @@
 	min-height: 150px;
 	background: url(AjaxLoader.gif) no-repeat center center
 }
+
+.owl-page .active > span{
+
+	background-color: white !important;
+	transform : scale(1.2) !important;
+}

@@ -31,6 +31,7 @@ background: linear-gradient(to left, #C02425 , #F0CB35); /* W3C, IE 10+/ Edge, F
 
 .owl-theme .owl-controls .owl-page.active span,
 .owl-theme .owl-controls.clickable .owl-page:hover span {
+	
     background-color: #E66000;
 }
 
@@ -71,4 +72,9 @@ footer a.totop:hover {
   color: #fff;
   background-color: #E66000;
   border-color: #E66000;
+}
+
+
+#topx{
+	padding-top: 14px;
 }
