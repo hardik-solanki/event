@@ -32,6 +32,7 @@
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/ion.rangeSlider.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 
 </head>
 
@@ -62,7 +63,7 @@
                   </li>
                   <li><a href="index.html#service">Featured</a>
                   </li>
-                  <li><a href="index.html">logout</a>
+                  <li><a href="index.html#contact">logout</a>
                   </li>
                   
 
@@ -79,73 +80,87 @@
 
 
   <div class="navbar og navbar-inverse navbar-fixed-left">
+    
     <ul class="nav og-left-nav navbar-nav">
         <li class="og-left-li"><a href="events.html">Events</a></li>
-        <li class="og-left-li activex"><a href="gallery.html">Gallery</a></li>
+        <li class="og-left-li"><a href="gallery.html">Gallery</a></li>
         <li class="og-left-li"><a href="business.html">Business </a></li>
         <li class="og-left-li"><a href="organizer.html">Organizer </a></li>
         <li class="og-left-li"><a href="viewstat.html">View Stats </a></li>
         <li class="og-left-li"><a href="bank.html">Bank </a></li>
-    
+        <li class="og-left-li activex"><a href="payment.html">Payment </a></li>
     </ul>
+
   </div>
   <div class="container">
-      <div class="gallery">
+  <div class="tabs">
+    
+    <nav role='navigation' class="transformer-tabs">
       <ul>
-        <li><img src="http://placehold.it/500/f1b702/fff&text=image1" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. quam, maxime nisi quo."></li>
-        <li><img src="http://placehold.it/500/d2f1b2/222&text=image2" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima."></li>
-        <li><img src="http://placehold.it/500/eee/000&text=image3" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!"></li>
-        <li><img src="http://placehold.it/500/222/fff&text=image4" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laudantium dignissimos tenetur eos unde quidem repellat officiis nemo laboriosam necessitatibus deleniti commodi quis aliquid est atque tempora aut, nihil!"></li>
-        <li><img src="http://placehold.it/500/b47f99/000&text=image5" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto minus consequatur soluta quaerat itaque, laboriosam quis a facilis, cumque, deleniti quas aperiam voluptate dolore. Enim nostrum sit eaque, porro eligendi illo placeat?"></li>
-        <li><img src="http://placehold.it/500/e1d400/000&text=image6" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit libero, quas iste repudiandae distinctio, quos dignissimos."></li>
-        <li><img src="http://placehold.it/500/00fCCb/222&text=image8" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima."></li>
-         <li><img src="http://placehold.it/500/fC2222/fff&text=image7" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. quam, maxime nisi quo."></li>
-        <li><img src="http://placehold.it/500/025FC5/FFF&text=image9" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!"></li>
+        <li class="col-md-4">
+          <a class="btn btn-theme btn-sm btn-min-block" href="#tab-1"><i class="fa fa-check-circle-o"></i> Settlements</a>
+        </li>
+        <li class="col-md-4">
+          <a class="btn btn-theme btn-sm btn-min-block" href="#tab-2" class="active"> <i class="fa fa-money"></i> Refunds / Disputes </a>
+        </li>
       </ul>
-    </div>
-  </div>
+    </nav>
+    
+      <div class="tab-cont row" id="tab-1">
+      </div>
+      
+      <div class="tab-cont row" id="tab-2">
+      </div>
 
+  </div><!-- // Tab -->
+
+</div><!-- // container -->
 <script type="text/javascript">
-  // Create a lightbox
+  var Tabs = {
 
-var $lightbox = $("<div class='lightbox'></div>");
-var $img = $("<img>");
-var $caption = $("<p class='caption'></p>");
+  init: function() {
+    this.bindUIfunctions();
+    this.pageLoadCorrectTab();
+  },
 
+  bindUIfunctions: function() {
 
-// Add image and caption to lightbox
+    $(document)
+      .on("click", ".transformer-tabs a[href^='#']:not('.active')", function(event) {
+        Tabs.changeTab(this.hash);
+        event.preventDefault();
+      })
+      .on("click", ".transformer-tabs a.active", function(event) {
+        Tabs.toggleMobileMenu(event, this);
+        event.preventDefault();
+      });
 
-$lightbox
-  .append($img)
-  .append($caption);
+  },
 
-// Add lighbox to document
+  changeTab: function(hash) {
 
-$('body').append($lightbox);
+    var anchor = $("[href=" + hash + "]");
+    var div = $(hash);
 
+    anchor.addClass("active").parent().siblings().find("a").removeClass("active");
+    div.addClass("active").siblings().removeClass("active");
 
-$('.gallery li').click(function (e) {
-  e.preventDefault();
+    window.history.replaceState("", "", hash);
+    anchor.closest("ul").removeClass("open");
 
-  // Get image link and description
-  var src = $(this).children('img').attr("src");
-  var cap = $(this).children('img').attr("alt");
+  },
 
-  // Add data to lighbox
+  pageLoadCorrectTab: function() {
+    this.changeTab(document.location.hash);
+  },
 
-  $img.attr('src',src);
-  $caption.text(cap);
+  toggleMobileMenu: function(event, el) {
+    $(el).closest("ul").toggleClass("open");
+  }
 
-  // Show lightbox
+}
 
-  $lightbox.fadeIn('fast');
-
-  $lightbox.click(function () {
-    $lightbox.fadeOut('fast');
-  });
-});
-
-
+Tabs.init();
 </script>
 </body>
 

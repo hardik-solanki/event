@@ -672,16 +672,26 @@ color: white;
  .half-div-elm{
     padding-top: 10px;
   }
-  .sponsorAdd, .sponsorRemove{
+  .sponsorAdd, .sponsorRemove, .eventDateAdd, .eventDateRemove{
     font-size: 22px;
     margin-top :2px ;
     outline: none;
   }
-  .sponsorRemove{
-    margin-top :10px;
+  .sponsorRemove,.eventDateRemove{
+    margin-top :5px;
     vertical-align: center;
   }
   .edit-action,.delete-action{
     font-size: 15px;
     padding: 0px;
+  }
+
+  #bandcheck{
+    position: absolute;
+    margin-left: 30px;
+    height: 20px;
+    width: 20px;
+  }
+  .text-white{
+    color: white !important;
   }
