@@ -86,26 +86,149 @@
         <li class="og-left-li"><a href="organizer.html">Organizer </a></li>
         <li class="og-left-li"><a href="viewstat.html">View Stats </a></li>
         <li class="og-left-li"><a href="bank.html">Bank </a></li>
-    
+        <li class="og-left-li"><a href="payment.html">Payment </a></li>
     </ul>
   </div>
+
   <div class="container">
-      <div class="gallery">
+    <div class="tabs">
+     <nav role='navigation' class="transformer-tabs">
       <ul>
-        <li><img src="http://placehold.it/500/f1b702/fff&text=image1" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. quam, maxime nisi quo."></li>
-        <li><img src="http://placehold.it/500/d2f1b2/222&text=image2" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima."></li>
-        <li><img src="http://placehold.it/500/eee/000&text=image3" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!"></li>
-        <li><img src="http://placehold.it/500/222/fff&text=image4" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laudantium dignissimos tenetur eos unde quidem repellat officiis nemo laboriosam necessitatibus deleniti commodi quis aliquid est atque tempora aut, nihil!"></li>
-        <li><img src="http://placehold.it/500/b47f99/000&text=image5" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto minus consequatur soluta quaerat itaque, laboriosam quis a facilis, cumque, deleniti quas aperiam voluptate dolore. Enim nostrum sit eaque, porro eligendi illo placeat?"></li>
-        <li><img src="http://placehold.it/500/e1d400/000&text=image6" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit libero, quas iste repudiandae distinctio, quos dignissimos."></li>
-        <li><img src="http://placehold.it/500/00fCCb/222&text=image8" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima."></li>
-         <li><img src="http://placehold.it/500/fC2222/fff&text=image7" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. quam, maxime nisi quo."></li>
-        <li><img src="http://placehold.it/500/025FC5/FFF&text=image9" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!"></li>
+        <li class="col-md-4">
+          <a class="btn btn-theme btn-sm btn-min-block" href="#tab-1"><i class="fa fa-paperclip"></i> Upload</a>
+        </li>
+        <li class="col-md-4">
+          <a class="btn btn-theme btn-sm btn-min-block" href="#tab-2" class="active"> <i class="fa fa-photo"></i> View</a>
+        </li>
       </ul>
+    </nav>
+      
+      <div class="tab-cont" id="tab-1">
+        <div class="row">
+          <div class="col-md-3">
+             Select Event
+             </div>
+          <div class="col-md-3">
+            <select class="form-control ">
+              <option>---- N/A ----</option>
+              <option>Event 1</option>
+              <option>Event 2</option>
+              <option>Event 3</option>
+              <option>Event 4</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            Image description
+          </div>
+            <div class="col-md-3 half-div-elm">
+            <textarea class="form-control">Description..</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+           Browse Images
+          </div>
+            <div class="col-md-3 half-div-elm">
+            <input type="file" multiple="" class="form-control" name="">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-3 half-div-elm">
+              <input class="form-control col-xs-5 btn sbmt-btn" id="SaveAccount" type="button" value="Save" style="display: block;">
+            </div>
+        </div>
+
+      </div>
+      <div class="tab-cont" id="tab-2">
+          <div class="">
+              <div class="gallery">
+              <ul>
+                <li>
+                <img src="http://placehold.it/500/f1b702/fff&text=image1" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. quam, maxime nisi quo.">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                <li><img src="http://placehold.it/500/d2f1b2/222&text=image2" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima.">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                <li><img src="http://placehold.it/500/eee/000&text=image3" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                <li><img src="http://placehold.it/500/222/fff&text=image4" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque laudantium dignissimos tenetur eos unde quidem repellat officiis nemo laboriosam necessitatibus deleniti commodi quis aliquid est atque tempora aut, nihil!">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                <li><img src="http://placehold.it/500/b47f99/000&text=image5" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto minus consequatur soluta quaerat itaque, laboriosam quis a facilis, cumque, deleniti quas aperiam voluptate dolore. Enim nostrum sit eaque, porro eligendi illo placeat?">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                <li><img src="http://placehold.it/500/e1d400/000&text=image6" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit libero, quas iste repudiandae distinctio, quos dignissimos.">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                <li><img src="http://placehold.it/500/00fCCb/222&text=image8" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime accusamus officiis dignissimos doloribus consectetur harum eos sapiente optio aut minima.">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+                 <li><img src="http://placehold.it/500/fC2222/fff&text=image7" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. quam, maxime nisi quo.">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                 </li>
+                <li><img src="http://placehold.it/500/025FC5/FFF&text=image9" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veritatis similique, amet, maiores soluta recusandae cupiditate, sed perspiciatis fugit minima, sunt dolores cum earum deserunt illo ipsum!">
+               <button class="removeImgBtn btn"><i class="fa fa-times "></i></button>
+                </li>
+              </ul>
+            </div>
+          </div>
+     </div>
     </div>
   </div>
 
+
 <script type="text/javascript">
+
+
+ var Tabs = {
+
+  init: function() {
+    this.bindUIfunctions();
+    this.pageLoadCorrectTab();
+  },
+
+  bindUIfunctions: function() {
+
+    $(document)
+      .on("click", ".transformer-tabs a[href^='#']:not('.active')", function(event) {
+        Tabs.changeTab(this.hash);
+        event.preventDefault();
+      })
+      .on("click", ".transformer-tabs a.active", function(event) {
+        Tabs.toggleMobileMenu(event, this);
+        event.preventDefault();
+      });
+
+  },
+
+  changeTab: function(hash) {
+
+    var anchor = $("[href=" + hash + "]");
+    var div = $(hash);
+
+    anchor.addClass("active").parent().siblings().find("a").removeClass("active");
+    div.addClass("active").siblings().removeClass("active");
+
+    window.history.replaceState("", "", hash);
+    anchor.closest("ul").removeClass("open");
+
+  },
+
+  pageLoadCorrectTab: function() {
+    this.changeTab(document.location.hash);
+  },
+
+  toggleMobileMenu: function(event, el) {
+    $(el).closest("ul").toggleClass("open");
+  }
+
+}
+
+Tabs.init();
   // Create a lightbox
 
 var $lightbox = $("<div class='lightbox'></div>");
@@ -123,13 +246,19 @@ $lightbox
 
 $('body').append($lightbox);
 
+$(".removeImgBtn").click(function(e){
+    if( confirm("Are you sure to remove ?? ")){
+      $(this).parent().remove();
+    }
 
-$('.gallery li').click(function (e) {
+  e.preventDefault();
+});
+$('.gallery li img').click(function (e) {
   e.preventDefault();
 
   // Get image link and description
-  var src = $(this).children('img').attr("src");
-  var cap = $(this).children('img').attr("alt");
+  var src = $(this).attr("src");
+  var cap = $(this).attr("alt");
 
   // Add data to lighbox
 
@@ -145,8 +274,8 @@ $('.gallery li').click(function (e) {
   });
 });
 
-
 </script>
+
 </body>
 
 </html>

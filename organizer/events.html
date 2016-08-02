@@ -88,6 +88,8 @@
         <li class="og-left-li"><a href="organizer.html">Organizer </a></li>
         <li class="og-left-li"><a href="viewstat.html">View Stats </a></li>
         <li class="og-left-li"><a href="bank.html">Bank </a></li>
+        <li class="og-left-li"><a href="payment.html">Payment </a></li>
+
     </ul>
 
   </div>
@@ -236,14 +238,99 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title">Ticket</h4>
             </div>
-            <div class="modal-body">
-              <div class="container">
+            <div class="modal-body" style="">
+
                 <div class="row">
-                  <div class="col-md-12">
+                  <div class=" col-md-offset-3 col-md-3 ">
+                      Free <input type="radio" class="radioPaid" name="paid" checked="true" value="false">
+                  </div>
+                  <div class="col-md-6 ">
+                      Paid <input type="radio"  class="radioPaid" name="paid" value="true">
                   </div>
                 </div>
-              </div>
+                <div class="half-div-elm" >
+                      <div class="row">    
+                          <div class="col-xs-5"> <input class="form-control" type="text" name="ticketName" placeholder="Ticket Name"> </div>
+                          <div class="col-xs-4"> <input class="form-control" type="number" name="ticketQuantity" placeholder="Qunatity"> </div>
+                          <div class="col-xs-3 tktInfoDiv" style="display:none;"> <input class="form-control" type="text" name="ticketPrice" placeholder="Price"> </div>  
+                      </div>
+                      <div class="row half-div-elm">
+                          <div class="col-md-10">
+                            <label class="text-sixsixsix">Ticket Desctiption :</label>
+                            <textarea class="form-control left-align" >Describe the ticket in brief..</textarea>
+                          </div>
+                      </div>
+
+                      <div class="row half-div-elm">
+                          <div class="col-md-12">
+                            <label class="text-sixsixsix">Salse Channel:</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <select  class="form-control">
+                              <option>Ahmedabad</option>
+                              <option>Surat</option>
+                              <option>Baroda</option>
+                              <option>Nadiyad</option>
+                              <option>Rajkot</option>
+                            </select>
+                          </div>
+                      </div>
+                        
+
+
+                      <div class="row half-div-elm">
+                          <div class="col-md-12">
+                            <label class="text-sixsixsix">Ticket salse starts:</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <input type="date" class="form-control" >
+                          </div>
+                          <div class="col-md-4">
+                            <input type="time" class="form-control" >
+                          </div>
+                      </div>
+                        <div class="row half-div-elm">
+                          <div class="col-md-12">
+                            <label class="text-sixsixsix">Ticket salse End:</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <input type="date" class="form-control" >
+                          </div>
+                          <div class="col-md-4">
+                            <input type="time" class="form-control" >
+                          </div>
+                      </div>
+                      <div class="row half-div-elm">
+                          <div class="col-md-12">
+                            <label class="text-sixsixsix">Ticket allowed per order:</label>
+                          </div>
+                      </div>
+                      <div class="row">  
+                          <div class="col-md-4">
+                            Minium
+                          </div>
+                          <div class="col-md-4">
+                            Maximum
+                          </div>
+                      </div>
+                      <div class="row">  
+                          <div class="col-md-4">
+                            <input type="number" value="1" disabled="" class="form-control" >
+                          </div>
+                          <div class="col-md-4">
+                            <input type="number" class="form-control" min="1" value="4" >
+                          </div>
+                      </div>
+                </div>
+
             </div>
+              
             <div class="modal-footer bg-white">
               <button type="button" class="btn btn-theme addTkt" >Add</button>
               <input type="hidden" id="eventId" />
@@ -344,7 +431,17 @@ $(document).ready(function(){
       $("#tktModal").modal('hide');
 
     });
+  $(".radioPaid").change(function(){
+    if($(this).val() == "false"){
+        $(".tktInfoDiv").hide();
+    }
+    else if($(this).val() == "true"){
+        $(".tktInfoDiv").show();
+    }
+  })
+
 });
+
 </script>
 </body>
 
