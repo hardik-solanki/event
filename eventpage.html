@@ -56,9 +56,10 @@
                                       <li class="active"><a href="index.html">Home</a></li>
                                       <li><a href="index.html#service">Featured</a></li>
                                       <li><a href="index.html#contact">Contact</a></li>
-                                       <li><a href="" class="cart cart-active">
+                                       
+                                       <li><a href="./payment.html" class="cart">
                                         <i class="fa fa-shopping-cart "></i>
-                                        <i class="cart-aside">1</i>
+                                        <i class="cart-aside">0</i>
                                       </a></li>
                                 </ul>
                           </div>	
@@ -87,7 +88,7 @@
 					        <h1 class="text-white">Jon Doe</h1>
 			        	</div>
 			        	<div class="col-xs-3">	
-    		                <button class="btn btn-theme btn-sm btn-min-block" data-toggle="modal" data-target="#bookModal">Book now</button>
+    		                <button class="btn btn-theme btn-sm btn-min-block" id="openBookNowModal">Book now</button>
 			        	</div>
 			        	<div class="col-xs-7 text-justify text-white">		
 							     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -403,7 +404,7 @@
 			      	</div>
 			    </div>
 			    <div class="modal-footer bg-gray">
-			      <button type="button" class="btn btn-theme btn-sm btn-min-block" data-dismiss="modal">Book</button>
+			      <button type="button" class="btn btn-theme btn-sm btn-min-block" id="bookNowHandler">Book</button>
 			    </div>
 			  </div>
 			  
@@ -423,7 +424,24 @@
 			<script src="js/nivo-lightbox.min.js"></script>
 	    <script src="js/custom.js"></script>
 	    <script src="js/app_stack_cards.js"></script>
+	    <script type="text/javascript">
+	    	$(document).ready(function () {
+	    		$("#openBookNowModal").click(function(){
+	    			$("#bookModal").modal('show');
+	    			
+	    		});
 
+	    		$(".cart-aside").hide();
+	    		$("#bookNowHandler").click(function(){
+	    			var cartVal = parseInt($(".cart-aside").text());
+	    				$(".cart-aside").html(cartVal+1).show();
+	    				$(".cart").removeClass("cart-active");
+	    				$(".cart").addClass("cart-active");
+	    				$("#bookModal").modal("hide");
+	    				// $(".modal-backdrop").remove();
+	    		});
+	    	});
+	    </script>
 </body>
 
 </html>

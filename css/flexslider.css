@@ -110,6 +110,10 @@ html[xmlns] .slides {display: block;}
 .flex-control-paging li a:hover {  opacity: 1; }
 .flex-control-paging li a.flex-active { position:relative;cursor: default; border:none;opacity: 1;
 	}
+
+	.irs-slider:hover{
+		cursor: col-resize;
+	}
 /*
 .flexslider:hover .flex-next {opacity: 1; }
 .flexslider:hover .flex-prev {opacity: 1;}*/
